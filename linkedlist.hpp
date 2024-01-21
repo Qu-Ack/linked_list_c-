@@ -146,25 +146,3 @@ public:
         cout << '\n';
     }
 };
-
-int main()
-{
-    LnkdList test{};
-    // test.ishowmeat();
-    test.beef_chest(3);
-    test.beef_chest(3);
-    test.beef_legs(10);
-    test.beef_legs(20);
-    test.beef_chest(1232);
-    test.beef_meat(321314, 2);
-    test.beef_meat(7575, 7);
-    test.beef_meat(137213, 8);
-    test.slay_bitch();
-    test.slay_bitch();
-    test.slay_bitch();
-    test.slay_chad();
-    test.slay_trans(3);
-    test.slay_trans(1);
-
-    test.ishowmeat();
-}
