@@ -145,4 +145,24 @@ public:
         }
         cout << '\n';
     }
+
+
+    void reverse() {
+        Node *tmp = head;
+        if (head == NULL) {
+            cout << "No element in the list";
+        } else if (head->next == NULL) {
+            cout << "Can't reverse only one element in the list";
+        }
+        head = NULL;
+        Node *prev = head;
+        while(tmp != NULL) {
+            Node *supernext = tmp->next;
+            tmp->next = prev;
+            prev = tmp;
+            tmp = supernext;
+        }
+        head = prev;
+
+    }
 };
