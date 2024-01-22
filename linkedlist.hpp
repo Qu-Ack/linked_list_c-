@@ -96,10 +96,10 @@ public:
     {
         Node *tmp = head;
         Node *prev = head;
-        while(tmp->next != NULL)
+        while (tmp->next != NULL)
         {
-            prev=tmp;
-            tmp=tmp->next;
+            prev = tmp;
+            tmp = tmp->next;
         }
         prev->next = NULL;
         tail = prev;
@@ -110,12 +110,11 @@ public:
         Node *tmp = head;
         Node *prev = head;
 
-
         if (position == 1)
         {
             slay_bitch();
         }
-        while(position > 0)
+        while (position > 0)
         {
             if (position == 1)
             {
@@ -132,7 +131,6 @@ public:
                 return;
             }
         }
-
     }
 
     void ishowmeat()
@@ -146,23 +144,49 @@ public:
         cout << '\n';
     }
 
-
-    void reverse() {
+    void reverse()
+    {
         Node *tmp = head;
-        if (head == NULL) {
+        if (head == NULL)
+        {
             cout << "No element in the list";
-        } else if (head->next == NULL) {
+        }
+        else if (head->next == NULL)
+        {
             cout << "Can't reverse only one element in the list";
         }
         head = NULL;
         Node *prev = head;
-        while(tmp != NULL) {
+        while (tmp != NULL)
+        {
             Node *supernext = tmp->next;
             tmp->next = prev;
             prev = tmp;
             tmp = supernext;
         }
         head = prev;
+    }
 
+    void print_recursive(Node *tmp)
+    {
+        // recursion
+        if (tmp->next == NULL)
+        {
+            return;
+        }
+        cout << "->" << tmp;
+        print_recursive(tmp->next);
+    }
+
+    void reverse_recursive(Node *tmp, Node *prev)
+    {
+        if (tmp == NULL)
+        {
+            head = prev;
+            return;
+        }
+        Node *a = tmp->next;
+        tmp->next = prev;
+        reverse_recursive(a, tmp);
     }
 };
