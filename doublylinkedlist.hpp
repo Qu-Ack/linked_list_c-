@@ -50,6 +50,10 @@ public:
         Node *tmp = head;
         for(int i = 1; i < index - 1; i++) {
             tmp = tmp->next;
+            if (tmp == NULL) {
+                std::cout << "List is not that big" << '\n';
+                return;
+            }
         }
         Node *supernext = tmp->next;
         node->next = supernext;
