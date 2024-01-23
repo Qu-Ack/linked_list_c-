@@ -189,4 +189,27 @@ public:
         tmp->next = prev;
         reverse_recursive(a, tmp);
     }
+
+    int * length() {
+        int * length = (int *)malloc(sizeof(int));
+        if (head == NULL) {
+            cout << "List is empty";
+            return length;
+        }
+        Node *tmp = head;
+        while(tmp != NULL) {
+            (*length)++;
+            tmp = tmp->next;
+        }
+        return length;
+    }
+
+    Node * findnodefromend(int n) {
+        int *len = length();
+        Node *tmp = head;
+        for(int i = 0; i < *len - n;i++ ) {
+            tmp = tmp->next;
+        }
+        return tmp;
+    }
 };

@@ -1,13 +1,14 @@
 #include <iostream>
-// #include "linkedlist.hpp"
-#include "doublylinkedlist.hpp"
+#include "linkedlist.hpp"
+// #include "doublylinkedlist.hpp"
 
 
 int main() {
-    DLL nums{};
-    nums.adde(1);
-    nums.adde(2);
-    nums.adde(3);
-    nums.insert(123, 2);
-    nums.print();
+    LnkdList nums{};
+    nums.beef_legs(1);
+    nums.beef_legs(2);
+    nums.beef_legs(3);
+    int * len = nums.length();
+    Node * result = nums.findnodefromend(2);
+    cout << result->data << '\n';
 }
